@@ -402,6 +402,74 @@
       border-radius: 18px;
     }
 
+
+    .downloads {
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .download-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(17,24,39,.05);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .download-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.13rem;
+      line-height: 1.25;
+    }
+
+    .download-card p {
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .download-card ul {
+      color: var(--muted);
+      margin: 0 0 18px;
+      padding-left: 20px;
+    }
+
+    .download-card .download-price {
+      font-size: 1.6rem;
+      line-height: 1;
+      font-weight: 900;
+      margin: auto 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .download-card .small-note {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 10px;
+    }
+
+    .shop-note {
+      margin-top: 24px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 22px;
+      color: var(--muted);
+    }
+
+    .shop-note strong {
+      color: var(--ink);
+    }
+
     .contact-panel {
       background:
         radial-gradient(circle at top right, rgba(255,255,255,.2), transparent 22rem),
@@ -464,12 +532,81 @@
     @media (max-width: 880px) {
       .hero-grid,
       .about-box,
-      .contact-panel {
+  
+    .downloads {
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .download-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(17,24,39,.05);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .download-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.13rem;
+      line-height: 1.25;
+    }
+
+    .download-card p {
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .download-card ul {
+      color: var(--muted);
+      margin: 0 0 18px;
+      padding-left: 20px;
+    }
+
+    .download-card .download-price {
+      font-size: 1.6rem;
+      line-height: 1;
+      font-weight: 900;
+      margin: auto 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .download-card .small-note {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 10px;
+    }
+
+    .shop-note {
+      margin-top: 24px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 22px;
+      color: var(--muted);
+    }
+
+    .shop-note strong {
+      color: var(--ink);
+    }
+
+    .contact-panel {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
-      .steps-grid {
+      .steps-grid,
+      .download-grid {
         grid-template-columns: 1fr;
       }
 
@@ -494,7 +631,75 @@
 
       .quick-card,
       .about-box,
-      .contact-panel {
+  
+    .downloads {
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .download-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(17,24,39,.05);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .download-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.13rem;
+      line-height: 1.25;
+    }
+
+    .download-card p {
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .download-card ul {
+      color: var(--muted);
+      margin: 0 0 18px;
+      padding-left: 20px;
+    }
+
+    .download-card .download-price {
+      font-size: 1.6rem;
+      line-height: 1;
+      font-weight: 900;
+      margin: auto 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .download-card .small-note {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 10px;
+    }
+
+    .shop-note {
+      margin-top: 24px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 22px;
+      color: var(--muted);
+    }
+
+    .shop-note strong {
+      color: var(--ink);
+    }
+
+    .contact-panel {
         padding: 24px;
       }
 
@@ -515,6 +720,7 @@
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#process">How it works</a>
+        <a href="#downloads">Downloads</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -722,6 +928,136 @@
       </div>
     </section>
 
+
+    <section class="downloads" id="downloads">
+      <div class="wrap">
+        <h2 class="section-title">Digital Downloads</h2>
+        <p class="section-subtitle">
+          Simple, plain-English guides you can use at home or in a small business. These are paid downloads delivered by email after purchase.
+        </p>
+
+        <div class="download-grid">
+          <article class="download-card">
+            <h3>Home Tech Help Starter Bundle</h3>
+            <p>A complete bundle of practical checklists for common home technology issues.</p>
+            <ul>
+              <li>7 customer-friendly PDF guides</li>
+              <li>Security, backups, Wi‑Fi, printers, and computer cleanup</li>
+              <li>Best value if you want everything together</li>
+            </ul>
+            <div class="download-price">$19</div>
+            <a class="btn btn-primary" href="mailto:travislocaltech@gmail.com?subject=Purchase%20Home%20Tech%20Help%20Starter%20Bundle&body=Hi%20Travis%2C%0A%0AI%20would%20like%20to%20purchase%20the%20Home%20Tech%20Help%20Starter%20Bundle%20for%20%2419.%0A%0APayPal%3A%20Travislocaltech%0A%0AAfter%20payment%2C%20please%20send%20the%20download%20to%20this%20email%20address.%0A">Request bundle</a>
+            <p class="small-note">PayPal: Travislocaltech</p>
+          </article>
+
+          <article class="download-card">
+            <h3>Home Tech Safety Checklist</h3>
+            <p>A simple checklist for improving basic home technology safety.</p>
+            <ul>
+              <li>Account safety</li>
+              <li>Device updates</li>
+              <li>Backup reminders</li>
+              <li>Scam warning signs</li>
+            </ul>
+            <div class="download-price">$9</div>
+            <a class="btn btn-secondary" href="mailto:travislocaltech@gmail.com?subject=Purchase%20Home%20Tech%20Safety%20Checklist&body=Hi%20Travis%2C%0A%0AI%20would%20like%20to%20purchase%20the%20Home%20Tech%20Safety%20Checklist%20for%20%249.%0A%0APayPal%3A%20Travislocaltech%0A%0AAfter%20payment%2C%20please%20send%20the%20download%20to%20this%20email%20address.%0A">Request guide</a>
+            <p class="small-note">PayPal: Travislocaltech</p>
+          </article>
+
+          <article class="download-card">
+            <h3>Slow Computer Cleanup Checklist</h3>
+            <p>A beginner-friendly guide for checking common causes of a slow computer.</p>
+            <ul>
+              <li>Startup programs</li>
+              <li>Storage checks</li>
+              <li>Browser cleanup</li>
+              <li>Update reminders</li>
+            </ul>
+            <div class="download-price">$9</div>
+            <a class="btn btn-secondary" href="mailto:travislocaltech@gmail.com?subject=Purchase%20Slow%20Computer%20Cleanup%20Checklist&body=Hi%20Travis%2C%0A%0AI%20would%20like%20to%20purchase%20the%20Slow%20Computer%20Cleanup%20Checklist%20for%20%249.%0A%0APayPal%3A%20Travislocaltech%0A%0AAfter%20payment%2C%20please%20send%20the%20download%20to%20this%20email%20address.%0A">Request guide</a>
+            <p class="small-note">PayPal: Travislocaltech</p>
+          </article>
+
+          <article class="download-card">
+            <h3>Home Wi‑Fi Troubleshooting Guide</h3>
+            <p>A practical guide for checking Wi‑Fi issues before calling for help.</p>
+            <ul>
+              <li>Router checks</li>
+              <li>Device connection basics</li>
+              <li>Placement tips</li>
+              <li>When to call your provider</li>
+            </ul>
+            <div class="download-price">$9</div>
+            <a class="btn btn-secondary" href="mailto:travislocaltech@gmail.com?subject=Purchase%20Home%20Wi-Fi%20Troubleshooting%20Guide&body=Hi%20Travis%2C%0A%0AI%20would%20like%20to%20purchase%20the%20Home%20Wi-Fi%20Troubleshooting%20Guide%20for%20%249.%0A%0APayPal%3A%20Travislocaltech%0A%0AAfter%20payment%2C%20please%20send%20the%20download%20to%20this%20email%20address.%0A">Request guide</a>
+            <p class="small-note">PayPal: Travislocaltech</p>
+          </article>
+
+          <article class="download-card">
+            <h3>Printer Troubleshooting Guide</h3>
+            <p>A step-by-step checklist for common home printer problems.</p>
+            <ul>
+              <li>Connection checks</li>
+              <li>Queue and restart steps</li>
+              <li>Ink, paper, and driver basics</li>
+              <li>Common warning signs</li>
+            </ul>
+            <div class="download-price">$9</div>
+            <a class="btn btn-secondary" href="mailto:travislocaltech@gmail.com?subject=Purchase%20Printer%20Troubleshooting%20Guide&body=Hi%20Travis%2C%0A%0AI%20would%20like%20to%20purchase%20the%20Printer%20Troubleshooting%20Guide%20for%20%249.%0A%0APayPal%3A%20Travislocaltech%0A%0AAfter%20payment%2C%20please%20send%20the%20download%20to%20this%20email%20address.%0A">Request guide</a>
+            <p class="small-note">PayPal: Travislocaltech</p>
+          </article>
+
+          <article class="download-card">
+            <h3>Family File & Photo Backup Plan</h3>
+            <p>A simple plan for protecting important family photos and files.</p>
+            <ul>
+              <li>What to back up</li>
+              <li>Where to store copies</li>
+              <li>Monthly backup routine</li>
+              <li>Emergency checklist</li>
+            </ul>
+            <div class="download-price">$9</div>
+            <a class="btn btn-secondary" href="mailto:travislocaltech@gmail.com?subject=Purchase%20Family%20File%20and%20Photo%20Backup%20Plan&body=Hi%20Travis%2C%0A%0AI%20would%20like%20to%20purchase%20the%20Family%20File%20and%20Photo%20Backup%20Plan%20for%20%249.%0A%0APayPal%3A%20Travislocaltech%0A%0AAfter%20payment%2C%20please%20send%20the%20download%20to%20this%20email%20address.%0A">Request guide</a>
+            <p class="small-note">PayPal: Travislocaltech</p>
+          </article>
+
+          <article class="download-card">
+            <h3>Password & Account Security Checklist</h3>
+            <p>A plain-English checklist for securing important accounts.</p>
+            <ul>
+              <li>Password habits</li>
+              <li>Two-factor authentication</li>
+              <li>Recovery information</li>
+              <li>Suspicious activity checks</li>
+            </ul>
+            <div class="download-price">$9</div>
+            <a class="btn btn-secondary" href="mailto:travislocaltech@gmail.com?subject=Purchase%20Password%20and%20Account%20Security%20Checklist&body=Hi%20Travis%2C%0A%0AI%20would%20like%20to%20purchase%20the%20Password%20and%20Account%20Security%20Checklist%20for%20%249.%0A%0APayPal%3A%20Travislocaltech%0A%0AAfter%20payment%2C%20please%20send%20the%20download%20to%20this%20email%20address.%0A">Request guide</a>
+            <p class="small-note">PayPal: Travislocaltech</p>
+          </article>
+
+          <article class="download-card">
+            <h3>Small Business Website Starter Checklist</h3>
+            <p>A planning checklist for a clean, simple small-business website.</p>
+            <ul>
+              <li>Pages and sections</li>
+              <li>Contact information</li>
+              <li>Service descriptions</li>
+              <li>Launch checklist</li>
+            </ul>
+            <div class="download-price">$9</div>
+            <a class="btn btn-secondary" href="mailto:travislocaltech@gmail.com?subject=Purchase%20Small%20Business%20Website%20Starter%20Checklist&body=Hi%20Travis%2C%0A%0AI%20would%20like%20to%20purchase%20the%20Small%20Business%20Website%20Starter%20Checklist%20for%20%249.%0A%0APayPal%3A%20Travislocaltech%0A%0AAfter%20payment%2C%20please%20send%20the%20download%20to%20this%20email%20address.%0A">Request guide</a>
+            <p class="small-note">PayPal: Travislocaltech</p>
+          </article>
+        </div>
+
+        <div class="shop-note">
+          <strong>How purchases work:</strong> Send payment to PayPal: <strong>Travislocaltech</strong>, then email <a href="mailto:travislocaltech@gmail.com">travislocaltech@gmail.com</a> with the guide or bundle name. Downloads are delivered by email after payment is confirmed.
+          <br><br>
+          <strong>Note:</strong> The paid PDFs are not posted publicly on this website so they remain protected as paid downloads.
+        </div>
+      </div>
+    </section>
+
+
     <section id="contact">
       <div class="wrap contact-panel">
         <div>
@@ -744,7 +1080,7 @@
   <footer>
     <div class="wrap footer-row">
       <div>© 2026 Travis Local Tech. All rights reserved.</div>
-      <div>PayPal: Travislocaltech • 4390 King St, Alexandria, VA 22302</div>
+      <div>PayPal: Travislocaltech • Paid downloads available • 4390 King St, Alexandria, VA 22302</div>
     </div>
   </footer>
 </body>
