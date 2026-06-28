@@ -1,14 +1,11 @@
-# Travis Local Tech Website With Payhip Checkout
+# Travis Local Tech Website - Spelled Service Headings
 
-Upload `index.html` to the root of your existing GitHub repo:
+Upload `index.html` to the root of your existing GitHub repo, replacing the current file.
 
-https://github.com/doogie7561/Travis-Local-Tech
-
-This version updates the Digital Downloads section:
-- Main bundle button goes directly to Payhip
-- Payhip link: https://payhip.com/b/NCnkb
-- Customer buys the bundle and receives automatic download delivery through Payhip
-- Individual $9 guide purchases remain manual by email/PayPal unless you create separate Payhip products later
-
-After upload, check:
-https://doogie7561.github.io/Travis-Local-Tech/
+This version spells out the blue service badges:
+- Computer
+- Wi-Fi
+- Website
+- Testing
+- Security
+- Backups

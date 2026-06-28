@@ -272,8 +272,10 @@
     }
 
     .icon {
-      width: 44px;
-      height: 44px;
+      width: fit-content;
+      min-width: 88px;
+      min-height: 44px;
+      padding: 9px 13px;
       display: grid;
       place-items: center;
       border-radius: 14px;
@@ -281,7 +283,8 @@
       color: var(--blue);
       font-weight: 900;
       margin-bottom: 14px;
-      font-size: 1.25rem;
+      font-size: .95rem;
+      white-space: nowrap;
     }
 
     .pricing {
@@ -781,37 +784,37 @@
 
         <div class="grid-3">
           <article class="service-card">
-            <div class="icon">PC</div>
+            <div class="icon">Computer</div>
             <h3>Slow Computer Help</h3>
             <p>Startup cleanup, updates, storage checks, browser extension review, basic security checks, and troubleshooting.</p>
           </article>
 
           <article class="service-card">
-            <div class="icon">Wi</div>
+            <div class="icon">Wi-Fi</div>
             <h3>Wi‑Fi & Printer Support</h3>
             <p>Router troubleshooting, home office setup, printer setup, device connection issues, and basic network help.</p>
           </article>
 
           <article class="service-card">
-            <div class="icon">Web</div>
+            <div class="icon">Website</div>
             <h3>Simple Websites</h3>
             <p>Clean one-page websites for individuals and small businesses, including service lists, contact buttons, and mobile-friendly layouts.</p>
           </article>
 
           <article class="service-card">
-            <div class="icon">App</div>
+            <div class="icon">Testing</div>
             <h3>App & Software Testing</h3>
             <p>Testing websites, apps, forms, workflows, and user experience to find problems before your customers do.</p>
           </article>
 
           <article class="service-card">
-            <div class="icon">Sec</div>
+            <div class="icon">Security</div>
             <h3>Password & Account Security</h3>
             <p>Password manager setup, two-factor authentication guidance, account cleanup, and plain-English security basics.</p>
           </article>
 
           <article class="service-card">
-            <div class="icon">Bak</div>
+            <div class="icon">Backups</div>
             <h3>Backups & Device Setup</h3>
             <p>Help with phones, laptops, tablets, family photos, file backups, and basic home technology questions.</p>
           </article>
