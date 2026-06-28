@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Travis Local Tech provides simple, reliable technology help for individuals, families, and small businesses in the DC, Northern Virginia, and DMV area." />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Travis Local Tech | DC & DMV Tech Help</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --accent-soft: #dbeafe;
+      --success: #16a34a;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(248, 250, 252, 0.92);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.15rem;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #2563eb, #0f172a);
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 16px 32px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .hero {
+      padding: 84px 0 52px;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1e40af;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    h1 {
+      margin: 18px 0 16px;
+      max-width: 740px;
+      font-size: clamp(2.45rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.06rem, 1.8vw, 1.25rem);
+      max-width: 680px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero-card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .status-card {
+      display: grid;
+      gap: 14px;
+    }
+
+    .status-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #f8fafc;
+    }
+
+    .check {
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #dcfce7;
+      color: var(--success);
+      font-weight: 900;
+    }
+
+    .status-row strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .status-row span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.03;
+      letter-spacing: -0.05em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.07rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.045);
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    ul.clean li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .pricing {
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .pricing .section-head p {
+      color: #cbd5e1;
+    }
+
+    .pricing .card {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.13);
+      box-shadow: none;
+    }
+
+    .pricing .card p,
+    .pricing .card li {
+      color: #cbd5e1;
+    }
+
+    .price {
+      margin: 14px 0 8px;
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+    }
+
+    .price small {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .process-list {
+      counter-reset: step;
+      display: grid;
+      gap: 14px;
+    }
+
+    .process-item {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 18px;
+    }
+
+    .process-item::before {
+      content: counter(step);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .process-item strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .process-item span {
+      color: var(--muted);
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .about-badge {
+      background: linear-gradient(145deg, #2563eb, #111827);
+      color: #fff;
+      border-radius: 30px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+    }
+
+    .about-badge h3 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .about-badge p {
+      color: #dbeafe;
+      margin: 18px 0 0;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .contact {
+      background:
+        radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.18), transparent 34%),
+        #ffffff;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+      align-items: center;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-weight: 900;
+      word-break: break-word;
+      margin-top: 12px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin-top: 14px;
+    }
+
+    footer {
+      padding: 30px 0;
+      color: #64748b;
+      border-top: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-wrap,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .contact-box {
+        padding: 20px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Travis Local Tech home">
+        <span class="logo">TLT</span>
+        <span>Travis Local Tech</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">DC • Northern Virginia • DMV Area</span>
+          <h1>Simple, reliable tech help without the confusion.</h1>
+          <p>
+            Travis Local Tech helps individuals, families, remote workers, and small businesses with common technology needs including slow computers, Wi-Fi, printers, backups, account security, website development, and software or application testing.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:travislocaltech@gmail.com?subject=Tech%20Help%20Request&body=Hi%20Travis%2C%0A%0AI%20need%20help%20with%3A%0A%0ADevice%20or%20service%20involved%3A%0A%0AGeneral%20location%3A%0A%0AThanks!">Request Help</a>
+            <a class="btn btn-secondary" href="#services">View Services</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Service highlights">
+          <div class="status-card">
+            <div class="status-row">
+              <span class="check">✓</span>
+              <div>
+                <strong>Clear explanations</strong>
+                <span>No confusing technical language or unnecessary upselling.</span>
+              </div>
+            </div>
+            <div class="status-row">
+              <span class="check">✓</span>
+              <div>
+                <strong>Practical troubleshooting</strong>
+                <span>Help with everyday problems like slow devices, printers, Wi-Fi, and accounts.</span>
+              </div>
+            </div>
+            <div class="status-row">
+              <span class="check">✓</span>
+              <div>
+                <strong>Simple estimates</strong>
+                <span>You will know the expected price before any work begins.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Technology services for home and small business.</h2>
+          <p>Get help with common technical problems, basic setup, and small website projects.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">💻</div>
+            <h3>Slow Computer Help</h3>
+            <p>Troubleshooting for slow startup, storage issues, updates, browser problems, and basic system cleanup.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📶</div>
+            <h3>Wi-Fi & Router Support</h3>
+            <p>Help with home Wi-Fi problems, router checks, basic network troubleshooting, and home office connectivity.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🖨️</div>
+            <h3>Printer Setup</h3>
+            <p>Setup and troubleshooting for common printer, scanner, wireless printing, and computer connection issues.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🔐</div>
+            <h3>Password & Account Security</h3>
+            <p>Support for password managers, two-factor authentication, account recovery basics, and safer login habits.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">☁️</div>
+            <h3>File & Photo Backups</h3>
+            <p>Help setting up practical backup options for important files, photos, and documents.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🌐</div>
+            <h3>Website Development</h3>
+            <p>Simple, mobile-friendly one-page websites for individuals, side gigs, and small local businesses.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📱</div>
+            <h3>Device Setup</h3>
+            <p>Basic help with phones, tablets, laptops, apps, email, settings, and general technology questions.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🧪</div>
+            <h3>Software & App Testing</h3>
+            <p>Practical testing and feedback for websites, apps, forms, user flows, and basic functionality.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🏠</div>
+            <h3>Home Office Support</h3>
+            <p>Support for common remote-work issues including displays, printers, webcams, email, and connectivity.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <h2>Simple starting prices.</h2>
+          <p>Every issue is different, but pricing is discussed before work begins.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Quick Help</h3>
+            <div class="price">$50 <small>starting at</small></div>
+            <p>Best for quick questions, simple setup, or small troubleshooting tasks.</p>
+            <ul class="clean">
+              <li>Basic device help</li>
+              <li>Short troubleshooting</li>
+              <li>Simple setup questions</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Home Tech Visit</h3>
+            <div class="price">$75+ <small>most common</small></div>
+            <p>Best for slow computers, printers, Wi-Fi, backups, and general home technology support.</p>
+            <ul class="clean">
+              <li>Computer troubleshooting</li>
+              <li>Printer and Wi-Fi help</li>
+              <li>Basic security and backup review</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Website Projects</h3>
+            <div class="price">Quote <small>per project</small></div>
+            <p>Best for simple websites, service pages, contact pages, and small business web presence.</p>
+            <ul class="clean">
+              <li>One-page websites</li>
+              <li>Mobile-friendly layout</li>
+              <li>Service and contact sections</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <h2>How it works.</h2>
+          <p>A simple process designed to save time and avoid surprises.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="process-list">
+            <div class="process-item">
+              <div>
+                <strong>Send a quick message</strong>
+                <span>Email a short description of the issue, the device or service involved, and your general location.</span>
+              </div>
+            </div>
+            <div class="process-item">
+              <div>
+                <strong>Get a simple estimate</strong>
+                <span>I will let you know whether it sounds like something I can help with and provide a starting estimate.</span>
+              </div>
+            </div>
+            <div class="process-item">
+              <div>
+                <strong>Troubleshoot the issue</strong>
+                <span>I check the problem, explain what I find, and recommend a practical next step.</span>
+              </div>
+            </div>
+            <div class="process-item">
+              <div>
+                <strong>No pressure</strong>
+                <span>If the issue requires a specialist, replacement part, or advanced repair, I will tell you clearly.</span>
+              </div>
+            </div>
+          </div>
+
+          <article class="card">
+            <div class="icon">✅</div>
+            <h3>Good fit for</h3>
+            <ul class="clean">
+              <li>Families who need basic tech support</li>
+              <li>Seniors who want patient help with devices</li>
+              <li>Remote workers with home office issues</li>
+              <li>Small businesses that need a simple website</li>
+              <li>Anyone who wants plain-English technology help</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-wrap">
+        <aside class="about-badge">
+          <div>
+            <h3>Local, practical, and easy to understand.</h3>
+            <p>Serving the DC, Northern Virginia, and DMV area.</p>
+          </div>
+          <div class="pill-row" aria-label="Service keywords">
+            <span class="pill">Computers</span>
+            <span class="pill">Wi-Fi</span>
+            <span class="pill">Printers</span>
+            <span class="pill">Websites</span>
+            <span class="pill">Backups</span>
+            <span class="pill">Security</span>
+          </div>
+        </aside>
+
+        <article class="card">
+          <h2>About Travis Local Tech</h2>
+          <p>
+            Travis Local Tech provides simple, reliable technology help for individuals, families, and small businesses. The goal is to make technology less frustrating by offering practical troubleshooting, clear explanations, and straightforward service.
+          </p>
+          <p style="margin-top: 14px;">
+            Services include website development, slow computer troubleshooting, Wi-Fi and printer support, device setup, software and application testing, file backup setup, password and account security, and other general technology needs.
+          </p>
+          <p class="note">
+            Note: Some issues may require a hardware repair shop, internet provider, device replacement, or manufacturer support. I will explain that clearly if it comes up.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact-box">
+        <div>
+          <div class="section-head" style="margin-bottom: 0;">
+            <h2>Need help with a tech issue?</h2>
+            <p>Email a short description of the problem, the device or service involved, and your general location. I’ll respond with whether it sounds like something I can help with and a simple estimate.</p>
+          </div>
+          <a class="email-link" href="mailto:travislocaltech@gmail.com?subject=Tech%20Help%20Request&body=Hi%20Travis%2C%0A%0AI%20need%20help%20with%3A%0A%0ADevice%20or%20service%20involved%3A%0A%0AGeneral%20location%3A%0A%0AThanks!">📧 travislocaltech@gmail.com</a>
+        </div>
+
+        <article class="card">
+          <h3>Helpful details to include</h3>
+          <ul class="clean">
+            <li>What problem you are having</li>
+            <li>Device type, brand, or service name</li>
+            <li>Whether it is urgent</li>
+            <li>Your general location in the DMV area</li>
+            <li>Any error messages you see</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Travis Local Tech. All rights reserved.</span>
+      <span>DC • Northern Virginia • DMV Area</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
